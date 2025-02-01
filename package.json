@@ -1,0 +1,25 @@
+{
+  "name": "assignment-4",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/jaydev-dwivedi/Assignment-4_A-Blogger-App#readme",
+  "bugs": {
+    "url": "https://github.com/jaydev-dwivedi/Assignment-4_A-Blogger-App/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaydev-dwivedi/Assignment-4_A-Blogger-App.git"
+  },
+  "license": "ISC",
+  "author": "Jaydev M. Dwivedi",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "mongoose": "^8.9.6"
+  }
+}
