@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-require('./../Model/config');
 
 const blogSchema = new mongoose.Schema({
   title: {

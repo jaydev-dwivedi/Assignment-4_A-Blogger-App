@@ -26,6 +26,14 @@
         </div>
       </div>
     </header>
+    <ul>
+      <% allBlogs.forEach((blog)=> { %>
+      <li><%= blog.title %></li>
+      <li><%= blog.author %></li>
+      <li><%= blog.description %></li>
+      <br />
+      <% }) %>
+    </ul>
     <!-- Page content-->
     <div class="container d-flex justify-content-center">
       <!-- Blog entries-->
