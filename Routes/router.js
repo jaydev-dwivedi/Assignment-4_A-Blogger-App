@@ -1,12 +1,14 @@
 const express = require('express');
 const router = express.Router();
 
-const { getAllBlogs, getBlogByTitle } = require('../controllers/userControllers')
-const { getAdminLogin, postAdminLogin } = require('../controllers/adminControllers');
+const { getBlogs, getBlogByTitle, postSearchTitle } = require('../controllers/userControllers')
+const { getAdminLogin, postAdminLogin, getTheBlog } = require('../controllers/adminControllers');
 
 router.route('/')
-  .get(getAllBlogs)
-  .post(getBlogByTitle);
+  .get(getBlogs);
+
+router.route('/:page/:title?')
+  .get(getBlogs);
 
 router.route('/admin')
   .get(getAdminLogin)

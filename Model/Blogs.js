@@ -5,16 +5,25 @@ const blogSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  author: {
-    type: String
+  summary: {
+    type: String,
+    required: true
   },
   description: {
     type: Object,
     required: true
   },
+  author: {
+    type: String
+  },
+  categories: {
+    type: Array,
+    required: true
+  },
   timeStamp: {
-    type: Date
-  }
+    type: Date,
+    required: true
+  },
 });
 
 const Blog = mongoose.model('blogposts', blogSchema);

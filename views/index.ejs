@@ -26,20 +26,13 @@
         </div>
       </div>
     </header>
-    <ul>
-      <% allBlogs.forEach((blog)=> { %>
-      <li><%= blog.title %></li>
-      <li><%= blog.author %></li>
-      <li><%= blog.description %></li>
-      <br />
-      <% }) %>
-    </ul>
     <!-- Page content-->
-    <div class="container d-flex justify-content-center">
-      <!-- Blog entries-->
-      <div class="row w-75">
-        <div class="w-auto col-lg-8">
+    <div class="container">
+      <div class="row">
+        <!-- Blog entries-->
+        <div class="col-lg-8">
           <!-- Featured blog post-->
+          <% if (current_pg == 1) { %>
           <div class="card mb-4">
             <a href="#!"
               ><img
@@ -49,20 +42,61 @@
             /></a>
             <div class="card-body">
               <div class="small text-muted">January 1, 2023</div>
-              <h2 class="card-title">Featured Post Title</h2>
-              <p class="card-text">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a
-                laboriosam. Dicta expedita corporis animi vero voluptate
-                voluptatibus possimus, veniam magni quis!
-              </p>
-              <a class="btn btn-primary" href="/blog">Read more →</a>
+              <h2 class="card-title"><%= allBlogs[index].title; %></h2>
+              <p class="card-text"><%= allBlogs[index].description; %></p>
+              <a
+                class="btn btn-primary"
+                href="/<%= current_pg %>/<%= allBlogs[index].title %>"
+                >Read more →</a
+              >
             </div>
           </div>
+          <% index++; %> <% } %>
           <!-- Nested row for non-featured blog posts-->
           <div class="row">
+            <% if (current_pg != 1) { %>
+            <h1>One</h1>
+            <div class="col-lg-6">
+              <% if (index < Object.keys(allBlogs).length) { %>
+              <div class="card mb-4">
+                <a href="#!"
+                  ><img
+                    class="card-img-top"
+                    src="https://dummyimage.com/700x350/dee2e6/6c757d.jpg"
+                    alt="..."
+                /></a>
+                <div class="card-body">
+                  <div class="small text-muted">January 1, 2023</div>
+                  <h2 class="card-title h4"><%= allBlogs[index].title; %></h2>
+                  <p class="card-text"><%= allBlogs[index].description; %></p>
+                  <a class="btn btn-primary" href="#!">Read more →</a>
+                </div>
+              </div>
+              <% index++; %> <% } %>
+              <!-- Blog post-->
+              <% if (index < Object.keys(allBlogs).length) { %>
+              <h1>Two</h1>
+              <div class="card mb-4">
+                <a href="#!"
+                  ><img
+                    class="card-img-top"
+                    src="https://dummyimage.com/700x350/dee2e6/6c757d.jpg"
+                    alt="..."
+                /></a>
+                <div class="card-body">
+                  <div class="small text-muted">January 1, 2023</div>
+                  <h2 class="card-title h4"><%= allBlogs[index].title; %></h2>
+                  <p class="card-text"><%= allBlogs[index].description; %></p>
+                  <a class="btn btn-primary" href="#!">Read more →</a>
+                </div>
+              </div>
+              <% index++; %> <% } %>
+            </div>
+            <% } %>
             <div class="col-lg-6">
               <!-- Blog post-->
+              <% if (index < Object.keys(allBlogs).length) { %>
+              <h1>Three</h1>
               <div class="card mb-4">
                 <a href="#!"
                   ><img
@@ -72,15 +106,15 @@
                 /></a>
                 <div class="card-body">
                   <div class="small text-muted">January 1, 2023</div>
-                  <h2 class="card-title h4">Post Title</h2>
-                  <p class="card-text">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Reiciendis aliquid atque, nulla.
-                  </p>
+                  <h2 class="card-title h4"><%= allBlogs[index].title; %></h2>
+                  <p class="card-text"><%= allBlogs[index].description; %></p>
                   <a class="btn btn-primary" href="#!">Read more →</a>
                 </div>
               </div>
+              <% index++; %> <% } %>
               <!-- Blog post-->
+              <% if (index < Object.keys(allBlogs).length) { %>
+              <h1>Four</h1>
               <div class="card mb-4">
                 <a href="#!"
                   ><img
@@ -90,17 +124,17 @@
                 /></a>
                 <div class="card-body">
                   <div class="small text-muted">January 1, 2023</div>
-                  <h2 class="card-title h4">Post Title</h2>
-                  <p class="card-text">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Reiciendis aliquid atque, nulla.
-                  </p>
+                  <h2 class="card-title h4"><%= allBlogs[index].title; %></h2>
+                  <p class="card-text"><%= allBlogs[index].description; %></p>
                   <a class="btn btn-primary" href="#!">Read more →</a>
                 </div>
               </div>
+              <% index++; %> <% } %>
             </div>
             <div class="col-lg-6">
               <!-- Blog post-->
+              <% if (index < Object.keys(allBlogs).length) { %>
+              <h1>Five</h1>
               <div class="card mb-4">
                 <a href="#!"
                   ><img
@@ -110,15 +144,15 @@
                 /></a>
                 <div class="card-body">
                   <div class="small text-muted">January 1, 2023</div>
-                  <h2 class="card-title h4">Post Title</h2>
-                  <p class="card-text">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Reiciendis aliquid atque, nulla.
-                  </p>
+                  <h2 class="card-title h4"><%= allBlogs[index].title; %></h2>
+                  <p class="card-text"><%= allBlogs[index].description; %></p>
                   <a class="btn btn-primary" href="#!">Read more →</a>
                 </div>
               </div>
+              <% index++; %> <% } %>
               <!-- Blog post-->
+              <% if (index < Object.keys(allBlogs).length) { %>
+              <h1>Six</h1>
               <div class="card mb-4">
                 <a href="#!"
                   ><img
@@ -128,31 +162,58 @@
                 /></a>
                 <div class="card-body">
                   <div class="small text-muted">January 1, 2023</div>
-                  <h2 class="card-title h4">Post Title</h2>
-                  <p class="card-text">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a
-                    laboriosam.
-                  </p>
+                  <h2 class="card-title h4"><%= allBlogs[index].title; %></h2>
+                  <p class="card-text"><%= allBlogs[index].description; %></p>
                   <a class="btn btn-primary" href="#!">Read more →</a>
                 </div>
               </div>
+              <% index++; %> <% } %>
             </div>
           </div>
+          <!-- Pagination-->
+          <nav aria-label="Pagination">
+            <hr class="my-0" />
+            <ul class="pagination justify-content-center my-4">
+              <!-- previous button -->
+              <li class="page-item">
+                <% if(current_pg - 1 > 0) { %>
+                <a class="page-link" href="<%= current_pg-1 %>">Previous</a>
+                <% } else { %>
+                <a class="page-link disabled" disabled>Previous</a>
+                <% } %>
+              </li>
+
+              <!-- Dynamic Page Numbers -->
+              <% for(let i = 1; i <= len; i++) { %> <% if (i == current_pg) { %>
+              <!-- Current Page -->
+              <li class="page-item active" aria-current="page">
+                <a class="page-link" href="/<%= i %>"><%= i %></a>
+              </li>
+              <% } else { %>
+              <li class="page-item" aria-current="page">
+                <a class="page-link" href="/<%= i %>"><%= i %></a>
+              </li>
+              <% }} %>
+              <!-- Next Button -->
+              <li class="page-item">
+                <% if(current_pg + 1 <= len) { %>
+                <a class="page-link" href="/<%= current_pg + 1 %>">Next</a>
+                <% } else { %>
+                <a class="page-link disabled" disabled>Next</a>
+                <% } %>
+              </li>
+            </ul>
+          </nav>
         </div>
+
+        <!-- Side widgets-->
+        <%- include('partials/side-menu') %>
       </div>
     </div>
     <!-- Footer-->
-    <footer class="py-5 bg-dark">
-      <div class="container">
-        <p class="m-0 text-center text-white">
-          Copyright &copy; Your Website 2023
-        </p>
-      </div>
-    </footer>
+    <%- include('partials/footer') %>
     <!-- Bootstrap core JS-->
     <script src="/js/bootstrap.js"></script>
     <!-- Core theme JS-->
-    <script src="/public/JavaScript/script.js"></script>
   </body>
 </html>
