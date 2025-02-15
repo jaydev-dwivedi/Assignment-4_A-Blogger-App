@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin | Blogger</title>
+    <link rel="stylesheet" href="/css/bootstrap.css" />
+    <link rel="stylesheet" href="/Styles/admin.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,100,1,200&icon_names=add,category,close,edit,home,home_storage,logout,menu,stylus"
+      rel="stylesheet"
+    />
+  </head>
+  <body id="body-pd">
+    <header class="header bg-body-secondary" id="header">
+      <div class="header_toggle d-flex align-items-center text-black">
+        <span class="material-symbols-outlined header-toggle fw-bolder fs-3"
+          >menu</span
+        >
+        <span
+          class="material-symbols-outlined header-toggle d-none fw-bold fs-3"
+          >close</span
+        >
+      </div>
+      <div class="d-flex align-items-center">
+        <span class="nav_logo-name fs-5">Blog Posts</span>
+      </div>
+    </header>
+    <div class="l-navbar" id="nav-bar">
+      <nav class="nav">
+        <div>
+          <div class="nav_list">
+            <a href="#" class="nav_link active d-flex align-items-center">
+              <span class="material-symbols-outlined nav_icon fw-bold fs-2"
+                >home</span
+              >
+              <span class="nav_name">Dashboard</span>
+            </a>
+            <a href="/admin/dashboard/blogs" class="nav_link">
+              <span class="material-symbols-outlined nav_icon fw-bold fs-2"
+                >home_storage</span
+              >
+              <span class="nav_name">All Blogs</span>
+            </a>
+            <a href="/admin/dashboard/categories" class="nav_link">
+              <span class="material-symbols-outlined nav_icon fw-bold fs-2"
+                >category</span
+              >
+              <span class="nav_name">All Categories</span>
+            </a>
+            <a href="/admin/dashboard/add-category" class="nav_link">
+              <span class="material-symbols-outlined nav_icon fw-bolder fs-2"
+                >add</span
+              >
+              <span class="nav_name">Add Category</span>
+            </a>
+            <a href="/admin/dashboard/write-blog" class="nav_link">
+              <span class="material-symbols-outlined nav_icon fs-2"
+                >stylus</span
+              >
+              <span class="nav_name">Write Blog</span>
+            </a>
+          </div>
+        </div>
+        <a href="#" class="nav_link">
+          <span class="material-symbols-outlined nav_icon fw-bold fs-3"
+            >logout</span
+          >
+          <span class="nav_name">Log out</span>
+        </a>
+      </nav>
+    </div>
+    <!--Container Main start-->
+    <% if(isAddCategory) { %>
+    <div
+      class="vh-100 position-relative bg-dark-subtle bg-opacity-25 d-flex justify-content-center align-items-center"
+    >
+      <div class="col-lg-9 position-absolute h-auto w-25 bg-dark rounded-2">
+        <form
+          action="/admin/dashboard/add-category"
+          method="post"
+          class="d-flex flex-column m-3"
+        >
+          <input
+            type="text"
+            name="category"
+            placeholder="New Category"
+            class="rounded-2 border-0 bg-dark-subtle px-3 py-2 m-2"
+          />
+          <button
+            type="submit"
+            class="rounded-2 text-white border-0 bg-primary px-3 py-2 m-2"
+          >
+            Add
+          </button>
+        </form>
+      </div>
+    </div>
+    <% } %> <% if(showBlogs){ %>
+    <div class="w-100 min-vh-100">
+      <% blogs.forEach((blog) => { %>
+      <a href="/admin/dashboard/blogs/<%= blog._id %>">
+        <div
+          class="w-auto p-5 border text-black border-secondary d-flex flex-column"
+        >
+          <h3><%= blog.title %></h3>
+          <p><%= blog.summary %></p>
+        </div>
+      </a>
+      <% }) %>
+    </div>
+    <% } %> <% if(showCategories){ %>
+    <div class="w-100 min-vh-100">
+      <% categories.forEach((obj) => { %>
+      <div class="w-auto p-5 border border-secondary d-flex flex-column">
+        <p><%= obj.category %></p>
+      </div>
+      <% }) %>
+    </div>
+    <% } %> <% if(writeBlogPost){ %> <%-
+    include('partials/admin-partials/createBlog') %> <% } %> <%-
+    include('partials/footer') %>
+    <script src="/js/bootstrap.js"></script>
+    <script src="/JavaScript/admin.js"></script>
+  </body>
+</html>

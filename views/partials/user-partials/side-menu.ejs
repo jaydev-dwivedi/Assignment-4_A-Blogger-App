@@ -1,0 +1,43 @@
+<div class="col-lg-4">
+  <!-- Search widget-->
+  <div class="card mb-4">
+    <div class="card-header">Search</div>
+    <div class="card-body">
+      <form action="/search/" method="GET" class="input-group">
+        <input
+          name="search_title"
+          class="form-control"
+          type="text"
+          placeholder="Enter search title..."
+          aria-label="Enter search title..."
+          aria-describedby="button-search"
+        />
+        <button class="btn btn-primary" id="button-search" type="submit">
+          Go!
+        </button>
+      </form>
+    </div>
+  </div>
+  <!-- Categories widget-->
+  <div class="card mb-4">
+    <div class="card-header">Categories</div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-sm-6">
+          <ul class="list-unstyled mb-0">
+            <li><a href="/category/">Web Design</a></li>
+            <li><a href="/category/">HTML</a></li>
+            <li><a href="/category/">Freebies</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-6">
+          <ul class="list-unstyled mb-0">
+            <li><a href="/category/">JavaScript</a></li>
+            <li><a href="/category/">CSS</a></li>
+            <li><a href="/category/">Tutorials</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

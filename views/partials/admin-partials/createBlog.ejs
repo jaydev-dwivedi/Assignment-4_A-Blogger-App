@@ -1,0 +1,47 @@
+<div class="col-lg-9 h-auto d-flex flex-column">
+  <form
+    action="/admin/dashboard/write-blog"
+    method="post"
+    class="w-75 bg-body-secondary m-3 d-flex flex-column rounded-3 p-3"
+  >
+    <input
+      type="text"
+      name="title"
+      id="blog_title"
+      class="border-0 px-3 py-2 my-2"
+      placeholder="Add Title"
+    />
+    <textarea
+      name="summary"
+      id="blog_summary"
+      class="border-0 px-3 py-2 my-2"
+      placeholder="Blog Summary"
+    ></textarea>
+    <textarea
+      name="description"
+      id="blog_description"
+      placeholder="Main Article"
+      class="border-0 px-3 py-2 my-2"
+    ></textarea>
+    <input
+      type="text"
+      name="categories"
+      id="categories"
+      class="border-0 px-3 py-2 my-2"
+      placeholder="Categories"
+    />
+    <input
+      type="text"
+      name="timeStamp"
+      id="timeStamp"
+      class="border-0 px-3 py-2 my-2"
+      placeholder="Categories"
+    />
+    <button
+      type="submit"
+      class="border-0 bg-primary text-white fs-5 fw-medium rounded-2 px-3 py-2 mt-5"
+    >
+      POST
+    </button>
+  </form>
+</div>
